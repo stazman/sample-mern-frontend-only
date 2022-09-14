@@ -14,7 +14,7 @@ export default function Edit() {
  useEffect(() => {
    async function fetchData() {
      const id = params.id.toString();
-     const response = await fetch(`https://sample-mern.vercel.app/record/${params.id.toString()}`);
+     const response = await fetch(`https://git.heroku.com/sample-mern-backend-only.git/record/${params.id.toString()}`);
 
      if (!response.ok) {
        const message = `An error has occurred: ${response.statusText}`;
