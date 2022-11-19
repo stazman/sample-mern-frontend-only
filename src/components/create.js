@@ -23,7 +23,7 @@ export default function Create() {
    // When a post request is sent to the create url, we'll add a new record to the database.
    const newPerson = { ...form };
 
-   await fetch("https://git.heroku.com/sample-mern-backend-only.git/record/add", {
+   await fetch("https://cors-anywhere.herokuapp.com/https://sample-mern-frontend.vercel.app/record/add", {
      method: "POST",
      headers: {
        "Content-Type": "application/json",

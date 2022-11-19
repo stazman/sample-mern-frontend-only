@@ -14,7 +14,7 @@ export default function Edit() {
  useEffect(() => {
    async function fetchData() {
      const id = params.id.toString();
-     const response = await fetch(`https://git.heroku.com/sample-mern-backend-only.git/record/${params.id.toString()}`);
+     const response = await fetch(`https://cors-anywhere.herokuapp.com/https://sample-mern-frontend.vercel.app/record/${params.id.toString()}`);
 
      if (!response.ok) {
        const message = `An error has occurred: ${response.statusText}`;
@@ -49,11 +49,11 @@ export default function Edit() {
    const editedPerson = {
      name: form.name,
      position: form.position,
-     level: form.level,
+     level: form.level
    };
 
    // This will send a post request to update the data in the database.
-   await fetch(`https://sample-mern.vercel.app/update/${params.id}`, {
+   await fetch(`https://localhost:5000/update/${params.id}`, {
      method: "POST",
      body: JSON.stringify(editedPerson),
      headers: {
